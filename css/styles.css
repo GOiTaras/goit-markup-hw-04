@@ -283,6 +283,7 @@ font-size: 36px;
 .team-item {
     background-color: #FFFFFF;
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .under-img-content{
@@ -398,6 +399,7 @@ font-family: inherit;
     background-color: #404BBF;
     color: #FFFFFF;
     border: 1px solid transparent;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .examples-list {
@@ -411,6 +413,12 @@ font-family: inherit;
 .examples-item {
 width: calc((100% - 48px) / 3);
     background-color: #FFFFFF;
+    
+}
+
+.examples-link:hover,
+.examples-link:focus {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .examples-text-content {
