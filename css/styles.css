@@ -9,7 +9,8 @@
     --card-h2-p-margin: 8px;
     --examples-text-content-padding: 32px 16px;
     --btn-border: 1px solid #e7e9fc;
-    --btn-border-hover: 1px solid transparent; 
+    --btn-border-hover: 1px solid transparent;
+    --icon-color: #8E8F99;
 } 
 
 body {
@@ -65,6 +66,7 @@ img {
 .header {
     background-color: #FFFFFF;
     border-bottom: 1px solid #E7E9FC;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container{
@@ -160,10 +162,11 @@ padding: 24px 0;
 .hero {
         background-color: rgba(46, 47, 66, 0.7);
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero_bg.jpg);
+    max-width: 1440px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 188px 0;
+    padding: 188px 0;  
 }
 
 
@@ -358,6 +361,14 @@ align-items: center;
 justify-content: center;
 }
 
+.team-soc-link:hover,
+.team-soc-link:focus {
+    background-color: #404bbf;
+}
+
+.team-soc-icon {
+    fill: var(--button-background);
+}
 
 /*-----------------CUSTOMERS----------------------*/
 
@@ -384,21 +395,29 @@ justify-content: center;
 
 .customers-item{
 width: 168px;
-    height: 88px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    box-sizing: border-box;
-        border: 1px solid #8E8F99;
-        border-radius: 4px;
-        display: flex;
-            align-items: center;
-            justify-content: center;
+height: 88px;
+flex: none;
+order: 0;
+flex-grow: 0;
+box-sizing: border-box;
 }
 
 
 .customers-link {
-    color: #8E8F99;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color);
+}
+
+.customers-link:hover,
+.customers-link:focus {
+    border-color: var(--link-hover-color);
+    color: var(--link-hover-color);
 }
 
 .customers-icon{
@@ -413,8 +432,13 @@ width: 168px;
 }
 
 .footer-container {
+    align-items: baseline;
     display: flex;
-    gap: 120px;
+    
+    
+}
+.footer-logo-text {
+    margin-right: 120px;
 }
 
 .logo-footer-part {
@@ -480,7 +504,7 @@ width: 168px;
             height: 40px;
 }
 
-.team-soc-link {
+.footer-soc-link {
     width: 100%;
         height: 100%;
         background-color: #4D5AE5;
@@ -490,7 +514,18 @@ width: 168px;
         justify-content: center;
 }
 
-.team-soc-icon {}
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+    background-color: #31d0aa;
+}
+
+.footer-soc-icon {
+    fill: var(--button-background);
+}
+
+
+
+
 
 
 /*--------------------PortfolioPage------------------------------*/
