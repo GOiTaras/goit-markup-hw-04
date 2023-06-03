@@ -1,5 +1,6 @@
 :root { 
     --white-background-color: #FFFFFF;
+    --white-color: #FFFFFF;
     --title-color: #2E2F42;
     --text-color: #434455;
     --button-background: #F4F4FD;
@@ -597,8 +598,15 @@ flex-grow: 0;
 
 .examples-link {
     border: 1px solid #E7E9FC;
-    transition: border-color var(--transition-hover-timing);
+    transition: border-color var(--transition-hover-timing), box-shadow var(--transition-hover-timing);
 }
+
+.examples-link:hover,
+.examples-link:focus {
+    border: 1px solid #F4F4FD;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
 
 .examples-link:hover .examples-overlay-text,
 .examples-link:focus .examples-overlay-text {
@@ -655,31 +663,60 @@ flex-grow: 0;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
     top: 0;
-    transition: opacity var(--transition-hover-timing);
+    transition: opacity var(--transition-hover-timing), visibility var(--transition-hover-timing);
 }
 
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 500ms linear;
     width: 408px;
     min-height: 584px;
     background: #FCFCFC;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    position: relative;
 }
 
-.modal-close {
+    .backdrop.is-hidden .modal {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+.modal-close-btn {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: #E7E9FC;
+    background-color: #E7E9FC;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    transition: background-color var(--transition-hover-timing);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: #404BBF;
+}
+
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon  {
+    fill: var(--white-color)
 }
 
 .is-hidden {
     visibility: none;
     opacity: 0;
     pointer-events: none;
+}
+
+.modal-close-icon {
+    fill: #2E2F42;
+    transition: fill var(--transition-hover-timing);
 }
